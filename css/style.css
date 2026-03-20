@@ -1,13 +1,13 @@
-:root{
+:root {
     --voile-doux: #6C63FF;
     --voile-foce: #534EDD;
     --orange-vif: #FFA726;
     --gris-tres-fonce: #666;
-    --gris-tres-clair:#F8F8F8;
-    --gris-clair: #EEE;   
+    --gris-tres-clair: #F8F8F8;
+    --gris-clair: #EEE;
 }
 
-*{
+* {
     border: 0;
     border: 0;
     padding: 0;
@@ -15,19 +15,18 @@
 }
 
 body {
-background-color: var(--gris-tres-clair);
-font-family: Roboto, sans-serif;
-line-height: 1.6;
+    background-color: var(--gris-tres-clair);
+    font-family: Roboto, sans-serif;
+    line-height: 1.6;
 }
 
 header {
-    background-color:white ;
-    box-shadow: 2px 10px rgba(0, 0, 0, 0.05) ;
+    background-color: white;
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 100;
     display: flex;
-    justify-content: space-between;
     justify-content: space-between;
     align-items: center;
     padding: 2rem 3rem;
@@ -37,5 +36,50 @@ header div a {
     text-decoration: none;
     font-size: 2.2rem;
     font-weight: bold;
-    color: var(--voilet-doux);
+    color: var(--voile-doux);
+}
+
+ul li {
+    list-style: none;
+    margin-left: 15px;
+}
+
+ul {
+    display: flex;
+}
+
+ul li a {
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 10px 0;
+}
+
+ul li a:hover {
+    color: var(--voile-doux);
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    background-color: var(--voile-doux);
+    transition: width 0.3s ease;
+}
+
+ul li a:hover::after {
+    width: 100%;
+}
+
+a.active {
+    color: var(--voile-doux);
+}
+
+a.active::after {
+    width: 100%;
 }
