@@ -228,3 +228,161 @@ footer a:hover {
     color: var(--orange-vif);
     transform: translateY(-3px);
 }
+
+/* Styles pour la page Contact */
+.contact-container {
+    max-width: 600px;
+    margin: 5rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: var(--gris-tres-fonce);
+}
+
+.contact-info a {
+    color: var(--voile-doux);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--voile-doux);
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid var(--gris-clair);
+    border-radius: 8px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--voile-doux);
+}
+
+.btn-submit {
+    background-color: var(--voile-doux);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--voile-foce);
+}
+
+/* Container de la section */
+.projets-container {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projets-container h1 {
+    text-align: center;
+    color: var(--voile-doux);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+/* Grille Responsive (3 colonnes) */
+.projets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Style de la Carte */
+.projet-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.projet-card:hover {
+    transform: translateY(-10px);
+}
+
+.projet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.projet-content {
+    padding: 1.5rem;
+}
+
+.projet-content h3 {
+    color: var(--voile-doux);
+    margin-bottom: 0.8rem;
+}
+
+.projet-content p {
+    font-size: 0.95rem;
+    color: var(--gris-tres-fonce);
+    margin-bottom: 1rem;
+}
+
+/* Tags de langages */
+.tags {
+    margin-bottom: 1.5rem;
+}
+
+.tags span {
+    font-size: 0.8rem;
+    background: var(--gris-clair);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+    color: var(--voile-foce);
+    font-weight: bold;
+}
+
+/* Liens Code/Démo */
+.links {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--gris-clair);
+    padding-top: 1rem;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--voile-doux);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
