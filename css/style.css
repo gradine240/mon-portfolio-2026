@@ -386,3 +386,319 @@ footer a:hover {
 .links a:hover {
     text-decoration: underline;
 }
+
+/* --- VARIABLES --- */
+:root {
+    /* Identité globale (Ton violet) */
+    --voile-doux: #6C63FF;
+    --voile-foce: #534EDD;
+    --gris-tres-clair: #F8F8F8;
+    --gris-tres-fonce: #666;
+
+    /* Palette Divertissement (Selon l'image) */
+    --div-rose: #D9A894; 
+    --div-brun: #8C6454;
+    --div-beige: #F4E9E2;
+    --transition-douce: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--gris-tres-clair);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* --- HEADER (VIOLET D'ORIGINE) --- */
+header {
+    background-color: white;
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+}
+
+header div a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--voile-doux);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--voile-doux);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--voile-doux);
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after, nav ul li a.active::after {
+    width: 100%;
+}
+
+/* --- PAGE DIVERTISSEMENT --- */
+
+/* Hero */
+.entete-divertissement {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: apparitionFond 1.5s ease-out forwards;
+}
+
+.hero-overlay-text {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2.5rem;
+    max-width: 450px;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    animation: apparitionTexte 1.2s ease-out 0.5s backwards;
+}
+
+.hero-overlay-text h1 {
+    font-size: 3rem;
+    color: var(--div-brun);
+    margin-bottom: 0.5rem;
+}
+
+.btn-decouvrir {
+    display: inline-block;
+    background-color: var(--div-rose);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+/* Section Vague */
+.transition-citation {
+    background-color: var(--div-rose);
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem;
+    font-size: 1.8rem;
+    font-style: italic;
+    clip-path: ellipse(150% 100% at 50% 100%);
+    position: relative;
+    z-index: 2;
+}
+
+/* Univers (Grille côte à côte) */
+.univers-section {
+    background-color: var(--div-beige);
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.titre-encadre h2 {
+    display: inline-block;
+    border: 1px solid var(--div-brun);
+    padding: 10px 30px;
+    color: var(--div-brun);
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+}
+
+.univers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Important pour le responsive */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.univers-item {
+    width: 320px;
+    background: white;
+    padding: 15px;
+    transition: var(--transition-douce); /* Animation élévation */
+}
+
+.univers-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Labels en haut de l'image */
+.img-wrapper {
+    position: relative;
+    height: 450px;
+    overflow: hidden; /* Important pour le zoom */
+    margin-bottom: 15px;
+}
+
+.label-cat {
+    position: absolute;
+    top: 0; /* Tout en haut */
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--div-rose);
+    color: white;
+    padding: 8px 30px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-douce); /* Animation zoom */
+}
+
+.univers-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Section Ma Prière (Horizontale) */
+.priere-section {
+    padding: 6rem 5%;
+    background-color: white;
+}
+
+.priere-container {
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+/* Photo avec bordure blanche */
+.priere-box-img {
+    flex: 1;
+    position: relative;
+    border: 15px solid white; /* Bordure blanche demandée */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.priere-box-img img {
+    width: 100%;
+    display: block;
+}
+
+.badge-label {
+    position: absolute;
+    top: -25px;
+    left: 20px;
+    background: var(--div-rose);
+    color: white;
+    padding: 8px 20px;
+    font-weight: bold;
+}
+
+/* Bloc Texte Encadré */
+.priere-content {
+    flex: 1;
+    padding: 3rem;
+    border: 3px solid var(--div-rose); /* Cadre autour du texte */
+    text-align: left;
+}
+
+.priere-content h2 {
+    color: var(--div-brun);
+    margin-bottom: 1rem;
+}
+
+/* --- FOOTER (VIOLET D'ORIGINE) --- */
+footer {
+    background-color: var(--voile-doux);
+    padding: 3rem 0;
+    text-align: center;
+    color: white;
+}
+
+footer a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: var(--orange-vif);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .priere-container {
+        flex-direction: column;
+    }
+    .hero-overlay-text {
+        right: 5%;
+        left: 5%;
+        padding: 1.5rem;
+    }
+}
+/* --- NOUVELLES ANIMATIONS D'ENTRÉE --- */
+
+@keyframes apparitionFond {
+    from {
+        opacity: 0;
+        transform: scale(1.1); /* Petit effet de zoom arrière au début */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes apparitionTexte {
+    from {
+        opacity: 0;
+        transform: translate(50px, -50%); /* Arrive par la droite */
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+}
+
